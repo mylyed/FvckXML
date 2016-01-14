@@ -1,4 +1,4 @@
-package shh.fvckxml.dao;
+package io.github.mylyed.shh.fvckxml.dao;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import shh.fvckxml.entitis.Area;
+import io.github.mylyed.shh.fvckxml.entitis.Area;
 
 @Service
 public class AreaDAO {

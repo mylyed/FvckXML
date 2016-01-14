@@ -1,4 +1,4 @@
-package shh.fvckxml.util.verifycode;
+package io.github.mylyed.shh.fvckxml.util.verifycode;
 
 import java.awt.Color;
 import java.awt.Font;

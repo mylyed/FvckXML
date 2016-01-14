@@ -1,4 +1,4 @@
-package shh.fvckxml.controller;
+package io.github.mylyed.shh.fvckxml.controller;
 
 import java.io.IOException;
 
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import shh.fvckxml.util.verifycode.BaseVerifyCode;
-import shh.fvckxml.util.verifycode.IVerifyCode.ImageAndCode;
+import io.github.mylyed.shh.fvckxml.util.verifycode.BaseVerifyCode;
+import io.github.mylyed.shh.fvckxml.util.verifycode.IVerifyCode.ImageAndCode;
 
 /**
  * 辅助控制器

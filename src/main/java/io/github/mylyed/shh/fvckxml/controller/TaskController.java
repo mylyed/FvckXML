@@ -1,4 +1,4 @@
-package shh.fvckxml.controller;
+package io.github.mylyed.shh.fvckxml.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

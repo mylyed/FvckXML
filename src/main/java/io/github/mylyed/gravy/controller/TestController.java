@@ -29,10 +29,10 @@ public class TestController {
 	public List<Area> json() {
 		return areaDAO.getAll();
 	}
-	
+
 	@ResponseBody
 	@RequestMapping("/area/{id}")
-	public List<Area> area(@PathVariable("id")String id) {
-		return areaDAO.getAreaById(id);
+	public List<Area> area(@PathVariable("id") String id) {
+		return areaDAO.getAreasById(id);
 	}
 }

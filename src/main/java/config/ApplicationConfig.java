@@ -25,7 +25,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.alibaba.druid.pool.DruidDataSource;
 
 @Configuration
-@ComponentScan(basePackages = "shh.fvckxml", excludeFilters = {
+@ComponentScan(basePackages = "io.github.mylyed.gravy", excludeFilters = {
 		@ComponentScan.Filter(type = FilterType.ANNOTATION, value = { Controller.class }) })
 @PropertySource({ "classpath:dbconfig.properties" })
 @EnableTransactionManagement
@@ -59,7 +59,7 @@ public class ApplicationConfig {
 		logger.debug("初始化 -->sessionFactory");
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource);
-		sessionFactory.setPackagesToScan("shh.fvckxml.entitis");
+		sessionFactory.setPackagesToScan("io.github.mylyed.gravy.entitis");
 		Properties properties = new Properties();
 		properties.load(getClass().getClassLoader().getResourceAsStream("hibernate.properties"));
 		logger.debug(properties.toString());

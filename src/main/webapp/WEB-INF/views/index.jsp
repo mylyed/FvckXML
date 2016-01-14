@@ -3,7 +3,7 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
 <html>
 <body>
-"${ctx}"
+	"${ctx}"
 	<h2>Hello ${str}</h2>
 </body>
 </html>

@@ -10,7 +10,7 @@
 		</layout>
 	</appender>
 
-	<logger name="shh.fvckxml">
+	<logger name="io.github.mylyed">
 		<level value="debug" />
 	</logger>
 

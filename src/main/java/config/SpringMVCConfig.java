@@ -22,7 +22,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "shh.fvckxml.controller")
+@ComponentScan(basePackages = "io.github.mylyed.gravy.controller")
 
 public class SpringMVCConfig {
 	Logger logger = LoggerFactory.getLogger(getClass());

@@ -1,4 +1,4 @@
-package io.github.mylyed.shh.fvckxml.entitis;
+package io.github.mylyed.gravy.entitis;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

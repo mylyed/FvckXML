@@ -1,4 +1,4 @@
-package io.github.mylyed.shh.fvckxml.util.verifycode;
+package io.github.mylyed.gravy.util.verifycode;
 
 import java.awt.image.BufferedImage;
 

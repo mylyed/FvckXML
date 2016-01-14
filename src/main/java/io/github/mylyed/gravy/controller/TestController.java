@@ -1,4 +1,4 @@
-package io.github.mylyed.shh.fvckxml.controller;
+package io.github.mylyed.gravy.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import io.github.mylyed.shh.fvckxml.dao.AreaDAO;
-import io.github.mylyed.shh.fvckxml.entitis.Area;
+import io.github.mylyed.gravy.dao.AreaDAO;
+import io.github.mylyed.gravy.entitis.Area;
 
 @Controller
 @RequestMapping("test")

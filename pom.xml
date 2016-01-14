@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>ssh</groupId>
-	<artifactId>FvckXML</artifactId>
+	<groupId>io.github.mylyed</groupId>
+	<artifactId>Gravy</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>FvckXML Maven Webapp</name>
+	<version>0.1.1</version>
+	<name>NO</name>
 	<url>http://maven.apache.org</url>
 
 	<licenses>
@@ -192,7 +192,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>FvckXML</finalName>
+		<finalName>Gravy</finalName>
 		 <plugins>  
             <plugin>  
                 <groupId>org.apache.maven.plugins</groupId>  

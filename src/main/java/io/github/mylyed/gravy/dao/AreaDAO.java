@@ -10,18 +10,20 @@ import org.springframework.transaction.annotation.Transactional;
 import io.github.mylyed.gravy.entitis.Area;
 
 @Service
-@Transactional
+
 public class AreaDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
+	@Transactional(readOnly = true)
 	public List<Area> getAll() {
 		@SuppressWarnings("unchecked")
 		List<Area> list = sessionFactory.getCurrentSession().createQuery("from Area").list();
 		return list;
 	}
 
+	@Transactional(readOnly = true)
 	public List<Area> getAreasById(String id) {
 		@SuppressWarnings("unchecked")
 		List<Area> list = sessionFactory.getCurrentSession().createQuery("from Area a where a.parentid =" + id).list();

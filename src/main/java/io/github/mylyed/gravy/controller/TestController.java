@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import io.github.mylyed.gravy.dao.AreaDAO;
+import io.github.mylyed.gravy.dao.GoodsDAO;
 import io.github.mylyed.gravy.entitis.Area;
+import io.github.mylyed.gravy.entitis.Goods;
+import io.github.mylyed.gravy.entitis.Page;
 
 @Controller
 @RequestMapping("test")
@@ -34,5 +37,17 @@ public class TestController {
 	@RequestMapping("/area/{id}")
 	public List<Area> area(@PathVariable("id") String id) {
 		return areaDAO.getAreasById(id);
+	}
+
+	@Autowired
+	GoodsDAO goodsDAO;
+
+	@ResponseBody
+	@RequestMapping("/goods")
+	public List<Goods> getGoods(Page page) {
+		if (page.getPageNum() <= 0 || page.getPageSize() <= 0) {
+			page = new Page(1, 10);
+		}
+		return goodsDAO.getGoods(page);
 	}
 }

@@ -42,6 +42,7 @@ import org.wltea.analyzer.lucene.IKAnalyzer;
  */
 public class IKAnalzyerDemo {
 	
+	@SuppressWarnings("resource")
 	public static void main(String[] args){
 		//构建IK分词器，使用smart分词模式
 		Analyzer analyzer = new IKAnalyzer(true);

@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 import io.github.mylyed.gravy.entitis.Area;
 
 @Service
-
 public class AreaDAO {
 
 	@Autowired

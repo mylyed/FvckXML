@@ -460,6 +460,7 @@ public class IKQueryExpressionParser {
 	 * @param op
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	private Query toBooleanQuery(Element op){
 		if(this.querys.size() == 0){
 			return null;

@@ -1,5 +1,7 @@
 package io.github.mylyed.gravy.entitis;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,7 +18,7 @@ import org.hibernate.annotations.Formula;
 @Entity
 @Table(name = "ecs_goods")
 public class Goods {
-	private String goods_id;
+	private Integer goods_id;
 	private String goods_sn;
 	private String goods_name;
 	private String goods_brief;
@@ -25,16 +27,16 @@ public class Goods {
 	private String goods_spec;
 	private String brand_country;
 	private Integer last_update;
-	private String market_price;
-	private String shop_price;
-	private String origin_price;
-	private String promote_price;
-	private String is_new;
-	private String goods_delete;
-	private String sort_order;
+	private BigDecimal market_price;
+	private BigDecimal shop_price;
+	private BigDecimal origin_price;
+	private BigDecimal promote_price;
+	private Integer is_new;
+	private Integer goods_delete;
+	private Integer sort_order;
 	private String is_on_sale;
-	private String sales_volume;
-	private String goods_number;
+	private Integer sales_volume;
+	private Integer goods_number;
 	// -------------------
 	private String cat_id;// b.cat_id;
 	private String cat_name;// b.cat_name
@@ -44,7 +46,7 @@ public class Goods {
 	private String brand_name;// c.brand_name;
 	private String brand_alias;// c.alias
 	private String brand_country1;// c.country
-	private String brand_id;// c.brand_id;
+	private Integer brand_id;// c.brand_id;
 	private String goods_country;// e.region_name
 
 	private Integer promote_flag;
@@ -53,11 +55,11 @@ public class Goods {
 
 	@Id
 	@Column(name = "goods_id")
-	public String getGoods_id() {
+	public Integer getGoods_id() {
 		return goods_id;
 	}
 
-	public void setGoods_id(String goods_id) {
+	public void setGoods_id(Integer goods_id) {
 		this.goods_id = goods_id;
 	}
 
@@ -134,65 +136,65 @@ public class Goods {
 	}
 
 	@Column(name = "market_price")
-	public String getMarket_price() {
+	public BigDecimal getMarket_price() {
 		return market_price;
 	}
 
-	public void setMarket_price(String market_price) {
+	public void setMarket_price(BigDecimal market_price) {
 		this.market_price = market_price;
 	}
 
 	@Column(name = "shop_price")
-	public String getShop_price() {
+	public BigDecimal getShop_price() {
 		return shop_price;
 	}
 
-	public void setShop_price(String shop_price) {
+	public void setShop_price(BigDecimal shop_price) {
 		this.shop_price = shop_price;
 	}
 
 	@Column(name = "origin_price")
-	public String getOrigin_price() {
+	public BigDecimal getOrigin_price() {
 		return origin_price;
 	}
 
-	public void setOrigin_price(String origin_price) {
+	public void setOrigin_price(BigDecimal origin_price) {
 		this.origin_price = origin_price;
 	}
 
 	@Column(name = "promote_price", insertable = false, updatable = false)
-	public String getPromote_price() {
+	public BigDecimal getPromote_price() {
 		return promote_price;
 	}
 
-	public void setPromote_price(String promote_price) {
+	public void setPromote_price(BigDecimal promote_price) {
 		this.promote_price = promote_price;
 	}
 
 	@Column(name = "is_new")
-	public String getIs_new() {
+	public Integer getIs_new() {
 		return is_new;
 	}
 
-	public void setIs_new(String is_new) {
+	public void setIs_new(Integer is_new) {
 		this.is_new = is_new;
 	}
 
 	@Column(name = "is_delete")
-	public String getGoods_delete() {
+	public Integer getGoods_delete() {
 		return goods_delete;
 	}
 
-	public void setGoods_delete(String goods_delete) {
+	public void setGoods_delete(Integer goods_delete) {
 		this.goods_delete = goods_delete;
 	}
 
 	@Column(name = "sort_order")
-	public String getSort_order() {
+	public Integer getSort_order() {
 		return sort_order;
 	}
 
-	public void setSort_order(String sort_order) {
+	public void setSort_order(Integer sort_order) {
 		this.sort_order = sort_order;
 	}
 
@@ -206,20 +208,20 @@ public class Goods {
 	}
 
 	@Column(name = "sales_volume")
-	public String getSales_volume() {
+	public Integer getSales_volume() {
 		return sales_volume;
 	}
 
-	public void setSales_volume(String sales_volume) {
+	public void setSales_volume(Integer sales_volume) {
 		this.sales_volume = sales_volume;
 	}
 
 	@Column(name = "goods_number")
-	public String getGoods_number() {
+	public Integer getGoods_number() {
 		return goods_number;
 	}
 
-	public void setGoods_number(String goods_number) {
+	public void setGoods_number(Integer goods_number) {
 		this.goods_number = goods_number;
 	}
 
@@ -297,11 +299,11 @@ public class Goods {
 	}
 
 	@Formula("(SELECT c.brand_id FROM ecs_brand c WHERE c.brand_id = brand_id)")
-	public String getBrand_id() {
+	public Integer getBrand_id() {
 		return brand_id;
 	}
 
-	public void setBrand_id(String brand_id) {
+	public void setBrand_id(Integer brand_id) {
 		this.brand_id = brand_id;
 	}
 

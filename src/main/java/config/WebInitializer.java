@@ -44,8 +44,8 @@ public class WebInitializer extends AbstractAnnotationConfigDispatcherServletIni
 
 	@Override
 	protected Filter[] getServletFilters() {
-		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-		characterEncodingFilter.setForceEncoding(true);
+		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter("UTF-8", true);
+		// characterEncodingFilter.setForceEncoding(true);
 		return new Filter[] { characterEncodingFilter };
 	}
 

@@ -2,6 +2,7 @@ package io.github.mylyed.gravy.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,5 +23,12 @@ public class GoodsDAO {
 		List<Goods> list = sessionFactory.getCurrentSession().createQuery("from Goods")
 				.setFirstResult((page.getPageNum() - 1) * page.getPageSize()).setMaxResults(page.getPageSize()).list();
 		return list;
+	}
+
+	@Transactional(readOnly = true)
+	public Long getGoodsCount() {
+		String hql = "select count(1) from Goods";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		return ((Long) query.uniqueResult()).longValue();
 	}
 }

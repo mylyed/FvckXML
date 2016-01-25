@@ -1,6 +1,8 @@
 package io.github.mylyed.gravy.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import io.github.mylyed.gravy.dao.AreaDAO;
 import io.github.mylyed.gravy.dao.GoodsDAO;
 import io.github.mylyed.gravy.entitis.Area;
-import io.github.mylyed.gravy.entitis.Goods;
 import io.github.mylyed.gravy.entitis.Page;
 
 @Controller
@@ -44,10 +45,19 @@ public class TestController {
 
 	@ResponseBody
 	@RequestMapping("/goods")
-	public List<Goods> getGoods(Page page) {
+	public Map<String, Object> getGoods(Page page) {
 		if (page.getPageNum() <= 0 || page.getPageSize() <= 0) {
 			page = new Page(1, 10);
 		}
-		return goodsDAO.getGoods(page);
+		Map<String, Object> map = new HashMap<>();
+		map.put("data", goodsDAO.getGoods(page));
+		map.put("count", goodsDAO.getGoodsCount());
+		return map;
+	}
+
+	@ResponseBody
+	@RequestMapping("/t2")
+	public void t1(Page page) {
+		System.out.println(page);
 	}
 }

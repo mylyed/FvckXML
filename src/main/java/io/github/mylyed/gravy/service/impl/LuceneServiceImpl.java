@@ -9,7 +9,9 @@ import java.math.BigDecimal;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.TokenStream;
@@ -20,9 +22,13 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.index.IndexableField;
+import org.apache.lucene.index.Term;
+import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
+import org.apache.lucene.search.MultiPhraseQuery;
+import org.apache.lucene.search.PhraseQuery;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.highlight.Highlighter;
@@ -249,9 +255,28 @@ public class LuceneServiceImpl implements LuceneService {
 	}
 
 	public static void main(String[] args) throws ParseException {
-		QueryParser parser = new QueryParser("goods_name", analyzer);
-		Query query = parser.parse("好啊");
+		// QueryParser parser = new QueryParser("goods_name", analyzer);
+		// Query query = parser.parse("好啊");
+		// System.out.println(query.toString());
+		Map<String, Float> boosts = new HashMap<>();
+		boosts.put("goods_name", new Float(20));
+		boosts.put("goods_spec", new Float(10));
+		MultiFieldQueryParser fieldQueryParser = new MultiFieldQueryParser(new String[] { "goods_name", "goods_spec" },
+				analyzer, boosts);
+
+		Query query = fieldQueryParser.parse("好啊 百度");
 		System.out.println(query.toString());
+		MultiPhraseQuery mq = new MultiPhraseQuery();
+		Term term = new Term("goods_name", "你好啊");
+		mq.add(term);
+		System.out.println(mq.toString());
+
+		PhraseQuery.Builder builder = new PhraseQuery.Builder();
+		builder.add(new Term("goods_name", "1"), 4);
+		builder.add(new Term("goods_name", "2"), 5);
+		PhraseQuery pq = builder.build();
+		System.out.println(pq.toString());
+
 	}
 	// public void search(String f, String k, List<Goods> src) throws Exception
 	// {

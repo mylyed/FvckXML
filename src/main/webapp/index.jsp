@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<jsp:include page="extjs_include.jsp"/>
-<script type="text/javascript" charset="utf-8" src="tree.js"></script>
-<title>extjs</title>
+<title>tks->github</title>
+<script src="ext4.2/ext-all-dev.js" type="text/javascript"></script>
+<script src="ext4.2/locale/ext-lang-zh_CN.js" type="text/javascript"></script>
+<link href="ext4.2/resources/css/ext-all.css" rel="stylesheet"
+	type="text/css" />
+<script src="app/app.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="tree-div"></div>
 </body>
 </html>
